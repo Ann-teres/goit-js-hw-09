@@ -32,3 +32,40 @@ img {
   max-width: 100%;
   height: auto;
 }
+.feedback-form,
+.form-style {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea,
+input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 24px auto;
+  margin-left: 24px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+.text-field {
+  min-height: 80px;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #6c8cff;
+}
