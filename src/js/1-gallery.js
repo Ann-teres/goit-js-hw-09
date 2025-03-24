@@ -87,31 +87,9 @@ const galleryMarkup = images
 gallery.innerHTML = galleryMarkup;
 
 
-gallery.addEventListener("click", (event) => {
-  event.preventDefault();
 
-  const clickedImage = event.target;
-
-  if (clickedImage.nodeName !== "IMG") return;
-
-
-  const largeImageURL = clickedImage.dataset.source;
-
-
-  const instance = basicLightbox.create(`
-    <img src="${largeImageURL}" alt="${clickedImage.alt}" />
-  `);
-
-  
-  instance.show();
-
-  
-  const closeOnEscape = (event) => {
-    if (event.key === "Escape") {
-      instance.close();
-      document.removeEventListener("keydown", closeOnEscape);
-    }
-  };
-
-  document.addEventListener("keydown", closeOnEscape);
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
 });
