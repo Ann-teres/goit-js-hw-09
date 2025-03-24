@@ -65,7 +65,19 @@ body {
 .text-field {
   min-height: 80px;
 }
+
+.btn {
+  border-radius: 8px;
+  background-color: #d0d991;
+  border: none;
+  color: #2e2f42;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 .btn:hover,
 .btn:focus {
-  background-color: #6c8cff;
+  background-color: #e9f2a2;
 }
