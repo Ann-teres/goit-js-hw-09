@@ -1,19 +1,17 @@
 import { defineConfig } from 'vite';
-import { glob } from 'glob';
+import { resolve } from 'path';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig({
-  define: {
-    global: {},
-  },
   root: 'src',
+  base: '/goit-js-hw-09/',
   build: {
-    sourcemap: true,
+    outDir: '../dist',
+    emptyOutDir: true,
     rollupOptions: {
-input: 'index.html',
-
+      input: resolve(__dirname, 'src/index.html'),
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
@@ -34,17 +32,21 @@ input: 'index.html',
         },
       },
     },
-    outDir: './dist',
-    emptyOutDir: true,
   },
   plugins: [
     injectHTML(),
-    FullReload(['./src/**/**.html']),
-    SortCss({
-      sort: 'mobile-first',
-    }),
+    FullReload(['./src/**/*.html']),
   ],
+  css: {
+    postcss: {
+      plugins: [
+        SortCss({
+          sort: 'mobile-first',
+        }),
+      ],
+    },
+  },
   optimizeDeps: {
-    exclude: ['fsevents'],  // виключаємо fsevents з обробки
+    exclude: ['fsevents'],
   },
 });

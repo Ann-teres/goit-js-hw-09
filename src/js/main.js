@@ -11,15 +11,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-import { defineConfig } from 'vite';
 
-export default defineConfig({
-  optimizeDeps: {
-    exclude: ['fsevents'],
-  },
-  build: {
-    rollupOptions: {
-      external: ['fsevents'],
-    },
-  },
-});
