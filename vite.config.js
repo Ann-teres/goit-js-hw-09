@@ -8,10 +8,15 @@ export default defineConfig({
   root: 'src',
   base: '/goit-js-hw-09/',
   build: {
-    outDir: 'dist',
+    outDir:  '../dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: resolve(__dirname, 'src/index.html'),
+           input: {
+        index: resolve(__dirname, 'src/index.html'),
+        gallery: resolve(__dirname, 'src/1-gallery.html'),
+        form: resolve(__dirname, 'src/2-form.html'),
+      },
+
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {

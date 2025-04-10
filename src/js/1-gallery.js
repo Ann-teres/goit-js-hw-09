@@ -1,4 +1,6 @@
 
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const images = [
   {
@@ -84,8 +86,6 @@ gallery.innerHTML = galleryMarkup;
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
+  captionPosition: 'bottom',
   captionDelay: 250,
 });
-
-
-

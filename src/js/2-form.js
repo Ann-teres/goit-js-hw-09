@@ -38,15 +38,3 @@ form.addEventListener('submit', event => {
     form.reset();
   }
 });
-
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  root: 'src', //  вказуємо корінь для Vite
-  build: {
-    outDir: '../dist', // вихідна папка для побудови
-    rollupOptions: {
-      input: '/src/index.html',
-    },
-  },
-});
