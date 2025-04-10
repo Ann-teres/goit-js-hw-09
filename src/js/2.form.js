@@ -42,7 +42,7 @@ form.addEventListener('submit', event => {
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: 'src', // вказуємо корінь для Vite
+  root: 'src', // вказую корінь для Vite
   build: {
     outDir: '../dist', // вихідна папка для побудови
     rollupOptions: {
